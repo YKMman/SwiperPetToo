@@ -1,0 +1,218 @@
+$fuschiaColor: #EF5DA8;
+$irisColor: #5D5FEF;
+$blackBlueColor: #42567A;
+$gradient: linear-gradient(180deg, #3877ee,#ef5da8);                       
+$blueColor:#3877EE;
+
+
+
+.hero{
+    position: relative;
+    &__container{
+        position: relative;
+        height: 100%;
+        max-width: 1470px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 15px;
+        padding-top: 170px;
+        border-left: 1px solid $blackBlueColor;
+        border-right: 1px solid $blackBlueColor;
+        &::after,
+        &::before{
+            content: "";
+            position: absolute;
+            background-color: $blackBlueColor;
+        }
+        &::after{
+            left: 0;
+            right: 0;
+            top: 50%;
+            height: 1px;
+            width: 100%;
+        }
+        &::before{
+            left: 50%;
+            top: 0;
+            height: 100%;
+            width: 1px;
+        }
+    }
+    &__title-history{
+        position: absolute;
+        width: min-content;
+        padding-left: 78px;
+        font-size: 56px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%;
+        color: #42567A;
+        &::after{
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 100%;
+            width: 5px;
+            background: $gradient;
+        }
+    }
+    &__title-date{
+        &__blue{
+            color: $irisColor;
+            font-size: 200px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 160px;
+            letter-spacing: -4px;
+        }
+        &__purple{
+            color: $fuschiaColor;
+            font-size: 200px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 160px;
+            letter-spacing: -4px;
+        }
+    }
+}
+
+
+
+.controllers{
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 45px;
+}
+
+.swiper-title{
+    display: none;
+    padding-bottom: 45px;
+}
+
+.button-next,
+.button-prev{
+    cursor: pointer;
+    display: inline-block;
+    height: fit-content;
+    width: fit-content;
+    background: none;
+    outline: none;
+    padding: 5px 10px;
+    border-radius: 100%;
+    border: 1px solid $blackBlueColor;
+    font-size: 22px;
+    color: $blackBlueColor;
+    &:hover{
+        color: $blueColor;
+    }
+    &:active{
+        background-color: $irisColor;
+    }
+}
+
+.count{
+    color: $blackBlueColor;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+
+
+
+@media(max-width: 1024px) {
+    .hero__title-date__purple,
+    .hero__title-date__blue{
+        font-size: 100px;
+        line-height: 80px;
+    }
+}
+
+@media(max-width: 768px) {
+    .hero__title-history{
+        font-size: 28px;
+        padding-left: 26px;
+    }
+    .hero__container{
+        padding-top: 70px;
+    }
+    .hero__container::after,
+    .hero__container::before{
+        display: none;
+    }
+    // .hero{
+    //     height: 680px;
+    // }
+}
+
+@media(max-width: 632px) {
+    .hero__container{
+        padding-top: 25px;
+        display: flex;
+        flex-direction: column;
+    }
+    .hero__title-history{
+        position: unset;
+        padding-left: 0;
+        margin-bottom: 65px;
+    }
+    .hero__title-history::after{
+        display: none;
+    }
+    // .controllers{
+    //     order: 1;
+    // }
+    .only{
+        display: none;
+    }
+    .swiper-title{
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid $blackBlueColor;
+        margin-bottom: 45px;
+    }
+    .swiper-container{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .swiper-slide{
+        transition: 0.35s;
+        opacity: 0;
+    }
+    .swiper-slide-active,
+    .swiper-slide-next{
+        opacity: 1;
+    }
+}
+
+
+@media(max-width: 476px) {
+    .hero__title-date__purple,
+    .hero__title-date__blue{
+        font-size: 60px;
+        line-height: 40px;
+    }
+}
+
+@media (max-height: 1036px) {
+    .hero{
+        height: 942px;
+        &__container{
+            padding-top: 100px;
+        }
+    }
+}
+
+@media (max-height: 968px) {
+    .hero{
+        height: 840px;
+        &__container{
+            padding-top: 50px;
+        }
+    }
+}

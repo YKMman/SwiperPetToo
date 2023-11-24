@@ -1,0 +1,93 @@
+$blackBlueColor: #42567A;
+
+.circle{
+    position: relative;
+    width: 530px;
+    height: 530px;
+    margin: 0 auto;
+    margin-top: 105px;
+    border-radius: 100%;
+    border: 1px solid $blackBlueColor;
+    z-index: 5;
+    transition: 0.65s ease;
+}
+
+.dot{
+    position: absolute;
+    cursor: pointer;
+    width: 5px;
+    height: 5px;
+    padding: 5px;
+    background-color: $blackBlueColor;
+    border-radius: 100%;
+    transition: 0.95s ease;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dot__index,
+.dot__title{
+    transition: 0.65s ease;
+}
+
+.dot .dot__index,
+.dot .dot__title{
+    opacity: 0;
+}
+
+.dot__title{
+    position: absolute;
+    right: -55px;
+    top: -25px;
+    font-weight: 700;
+    font-size: 14px;
+    width: max-content;
+}
+
+.dot:hover{
+    padding: 15px;
+    background-color: white;
+    border: 1px solid $blackBlueColor;
+    color: $blackBlueColor;
+}
+
+.dot:hover .dot__index,
+.dot:hover .dot__title{
+    opacity: 1;
+}
+
+
+.dot-active{
+    position: absolute;
+    cursor: pointer;
+    width: 5px;
+    height: 5px;
+    padding: 5px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-color: white;
+    border: 1px solid $blackBlueColor;
+    color: $blackBlueColor;
+}
+
+.dot-active .dot__title,
+.dot-active .dot__index{
+    opacity: 1;
+}
+
+@media(max-width: 768px) {
+    // .circle{
+    //     margin-top: 25px;
+    // }
+}
+
+@media(max-width: 632px) {
+    .circle{
+        display: none;
+    }
+}
