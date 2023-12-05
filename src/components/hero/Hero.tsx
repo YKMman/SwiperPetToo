@@ -54,7 +54,7 @@ const Hero = () => {
                 </div>
 
 
-                <Slider sliderRef={sliderRef}/>
+                <Slider sliderRef={sliderRef} setActiveSlide={setActiveSlide} />
 
             </div>
         </section>
